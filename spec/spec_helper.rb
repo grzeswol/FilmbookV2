@@ -20,6 +20,7 @@ SimpleCov.start 'rails'
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
 	config.include FactoryGirl::Syntax::Methods
+  config.include Devise::TestHelpers, type: :controller
 
 	config.before(:suite) do
 		DatabaseCleaner.strategy = :transaction
