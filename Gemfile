@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.4'
+gem 'rails'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -41,9 +41,9 @@ gem 'devise'
 gem "twitter-bootstrap-rails"
 
 group :test, :development do
-	gem 'rspec-rails'
+	gem 'rspec-rails', '~>3.0.0'
 	gem 'capybara'
-	gem 'factory_girl_rails'
+	gem 'factory_girl_rails', '~> 4.0'
 	gem 'simplecov', :require => false
 	gem 'database_cleaner'
 end

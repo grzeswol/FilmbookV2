@@ -24,11 +24,11 @@ RSpec.describe FilmsController, :type => :controller do
   # Film. As you add validations to Film, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+		attributes_for(:film)
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+		attributes_for(:film, year: "Not a number")
   }
 
   # This should return the minimal set of values that should be in the session
@@ -103,15 +103,16 @@ RSpec.describe FilmsController, :type => :controller do
   describe "PUT update" do
     describe "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+				attributes_for(:film, title: "New Film")
       }
 
       it "updates the requested film" do
         film = Film.create! valid_attributes
         put :update, {:id => film.to_param, :film => new_attributes}, valid_session
         film.reload
-        skip("Add assertions for updated state")
+				expect(film.title).to eq("New Film")
       end
+			
 
       it "assigns the requested film as @film" do
         film = Film.create! valid_attributes

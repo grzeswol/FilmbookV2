@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :film do
-    title "MyString"
-    director "MyString"
-    year 1
+    title "Film"
+    director "Director"
+    year 1990
   end
 end
