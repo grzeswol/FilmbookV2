@@ -5,5 +5,6 @@ FactoryGirl.define do
     title "Film"
     director "Director"
     year 1990
+		image "film.jpg"
   end
 end

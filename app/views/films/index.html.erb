@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>Image</th>
       <th>Title</th>
       <th>Director</th>
       <th>Year</th>
@@ -13,6 +14,7 @@
   <tbody>
     <% @films.each do |film| %>
       <tr>
+        <td><%= image_tag(film.image) %></td>
         <td><%= film.title %></td>
         <td><%= film.director %></td>
         <td><%= film.year %></td>
