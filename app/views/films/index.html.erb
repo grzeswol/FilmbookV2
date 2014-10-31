@@ -4,30 +4,31 @@
 <div id="myCarousel" class="carousel slide">
       <div class="carousel-inner">
         <div class="item active">
-					<%= image_tag(@films.first.image) %>
+					<%= image_tag(@film_carousel[0].image) %>
             <div class="carousel-caption">
-							<h1><%= @films.first.title %></h1>
-              <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+							<h1><%= @film_carousel[0].title %></h1>
+							<p class="lead"><%= @film_carousel[0].description %></p>
               <a class="btn btn-large btn-primary" href="#">Sign up today</a>
             </div>
         </div>
         <div class="item">
-					<%= image_tag(@films.first.image) %>
+					<%= image_tag(@film_carousel[1].image) %>
           <div class="container">
             <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+							<h1><%= @film_carousel[1].title %></h1>
+							<p class="lead"><%= @film_carousel[1].description %></p>
               <a class="btn btn-large btn-primary" href="#">Learn more</a>
             </div>
           </div>
         </div>
         <div class="item">
-					<%= image_tag(@films.first.image) %>
+					<%= image_tag(@film_carousel[2].image) %>
           <div class="container">
             <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <a class="btn btn-large btn-primary" href="#">Browse gallery</a>
+							<h1><%= @film_carousel[2].title %></h1>
+							<p class="lead"><%= @film_carousel[2].description %></p>
+              <a class="btn btn-large btn-primary" href="#">Learn more</a>
+
             </div>
           </div>
         </div>

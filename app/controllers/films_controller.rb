@@ -1,5 +1,6 @@
 class FilmsController < ApplicationController
   before_action :set_film, only: [:show, :edit, :update, :destroy]
+	before_action :set_carousel, only: :index
 	respond_to :html
 
   def index
@@ -40,7 +41,15 @@ class FilmsController < ApplicationController
       @film = Film.find(params[:id])
     end
 
+		def set_carousel
+			@film_carousel = []
+			3.times do 
+				id = rand(1..Film.count)
+				@film_carousel << Film.find(id)
+			end
+		end
+
     def film_params
-      params.require(:film).permit(:title, :director, :year, :image)
+      params.require(:film).permit(:title, :director, :year, :image, :actors, :description)
     end
 end
