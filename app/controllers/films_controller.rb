@@ -36,6 +36,13 @@ class FilmsController < ApplicationController
     respond_with(@film)
   end
 
+
+	def list_films
+		@films = Film.all
+		respond_with(@films)
+	end
+
+
   private
     def set_film
       @film = Film.find(params[:id])
@@ -43,9 +50,9 @@ class FilmsController < ApplicationController
 
 		def set_carousel
 			@film_carousel = []
-			3.times do 
+			while (@film_carousel.count < 3) do 
 				id = rand(1..Film.count)
-				@film_carousel << Film.find(id)
+				@film_carousel << Film.find(id) unless @film_carousel.include? (Film.find(id))
 			end
 		end
 
