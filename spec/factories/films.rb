@@ -6,5 +6,7 @@ FactoryGirl.define do
     director "Director"
     year 1990
 		image "film.jpg"
+		description "Sample description"
+		actors "First Actor, Second Actor"
   end
 end

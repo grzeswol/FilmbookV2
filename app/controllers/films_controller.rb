@@ -50,7 +50,7 @@ class FilmsController < ApplicationController
 
 		def set_carousel
 			@film_carousel = []
-			while (@film_carousel.count < 3) do 
+			while (@film_carousel.count < 3 && Film.count >= 3) do 
 				id = rand(1..Film.count)
 				@film_carousel << Film.find(id) unless @film_carousel.include? (Film.find(id))
 			end
