@@ -11,6 +11,23 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :born_year %><br>
+    <%= f.datetime_field :born_year %>
+  </div>
+  <div class="field">
+    <%= f.label :born_place %><br>
+    <%= f.text_field :born_place %>
+  </div>
+  <div class="field">
+    <%= f.label :bio %><br>
+    <%= f.text_field :bio %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
