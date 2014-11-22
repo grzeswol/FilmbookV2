@@ -28,14 +28,14 @@
     <%= f.text_field :image %>
   </div>
   <div class="field">
-    <%= f.label :actors %><br>
-    <%= f.text_field :actors %>
-  </div>
-  <div class="field">
     <%= f.label :description %><br>
     <%= f.text_field :description %>
+  </div>
+  <div class="field">
+		<%= select("actors", "id", Actor.all.collect {|a| [a.to_s, a.id]}) %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <%end %>
+

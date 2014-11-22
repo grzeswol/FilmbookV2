@@ -8,7 +8,6 @@ class Film < ActiveRecord::Base
 		self.title.strip!
 		self.image.strip!
 		self.director.strip!
-		self.actors.strip!
 		self.description.strip!
 	end
 end

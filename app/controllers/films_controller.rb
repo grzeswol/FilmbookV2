@@ -22,6 +22,8 @@ class FilmsController < ApplicationController
 
   def create
     @film = Film.new(film_params)
+		@actor = Actor.find_by(id: params[:actors][:id])
+		@film.actors << @actor
     @film.save
     respond_with(@film)
   end
@@ -57,6 +59,6 @@ class FilmsController < ApplicationController
 		end
 
     def film_params
-      params.require(:film).permit(:title, :director, :year, :image, :actors, :description)
+      params.require(:film).permit(:title, :director, :year, :image, :description)
     end
 end
