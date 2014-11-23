@@ -29,8 +29,10 @@ class FilmsController < ApplicationController
   end
 
   def update
+		@actor = Actor.find_by(id: params[:actors][:id])
+		@film.actors << @actor
     @film.update(film_params)
-    respond_with(@film)
+    respond_with(@films)
   end
 
   def destroy

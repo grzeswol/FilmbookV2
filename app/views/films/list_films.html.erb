@@ -13,8 +13,11 @@
 		<td><%= film.description %></td>
 		<td><%= film.year %></td>
 		<td><%= film.director %></td>
-		<td><%= film.actors %></td>
+		<td><%= film.actors.map {|a| link_to(a.name, a) }.join(", ").html_safe %></td>
+		<td><%= link_to 'Edit film', edit_film_path(film) %></td>
 	</tr>
 	<% end %>
 
 </table>
+
+<%= link_to 'New Film', new_film_path %>
