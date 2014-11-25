@@ -1,6 +1,7 @@
 class ActorsController < ApplicationController
   before_action :set_actor, only: [:show, :edit, :update, :destroy]
 	respond_to :html
+	autocomplete :actor, :name, full: true
 
   def index
     @actors = Actor.all

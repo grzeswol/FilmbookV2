@@ -39,6 +39,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'devise'
 gem "twitter-bootstrap-rails"
+gem 'rails4-autocomplete'
+gem 'jquery-ui-rails'
 
 group :test, :development do
 	gem 'rspec-rails', '~>3.0.0'

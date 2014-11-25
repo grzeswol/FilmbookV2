@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :actors
+  resources :actors do
+		get :autocomplete_actor_name, on: :collection
+	end
 
   devise_for :users
   resources :films
