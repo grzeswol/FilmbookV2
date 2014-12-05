@@ -32,10 +32,8 @@
     <%= f.text_field :description %>
   </div>
   <div class="field">
-		<%= select("actors", "id", Actor.all.collect {|a| [a.to_s, a.id]}) %>
-  </div>
-  <div class="field">
-		<%= autocomplete_field_tag 'actor', '', autocomplete_actor_name_actors_path, 'data-delimiter' => ', ', multiple: true, size: 75, id_element: '#some_element' %>
+		<%= label_tag("Actors") %>
+		<%= autocomplete_field_tag 'actors', '', autocomplete_actor_name_actors_path, 'data-delimiter' => ', ', multiple: true, size: 75, id_element: '#some_element' %>
   </div>
   <div class="actions">
     <%= f.submit %>

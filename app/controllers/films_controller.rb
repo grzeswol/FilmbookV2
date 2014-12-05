@@ -22,8 +22,9 @@ class FilmsController < ApplicationController
 
   def create
     @film = Film.new(film_params)
-		@actor = Actor.find_by(id: params[:actors][:id])
-		@film.actors << @actor
+		@actors = params[:actors].strip.split(',')
+		p @actors
+		@actors.each{|a| @film.actors << Actor.find_by_name(a.strip)}
     @film.save
     respond_with(@film)
   end
