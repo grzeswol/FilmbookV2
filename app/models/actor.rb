@@ -6,4 +6,7 @@ class Actor < ActiveRecord::Base
 		name
 	end
 
+	def years_from_now
+		Time.now.year - born_year.year
+	end
 end

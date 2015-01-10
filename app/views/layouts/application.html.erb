@@ -16,6 +16,7 @@
 
 	<%= menu_group :pull => :right do %>
 		<% if user_signed_in? %>
+			<%= menu_item "Profile", user_path(current_user) %>
 			<%= menu_item "Logout", destroy_user_session_path, :method => :delete %>
 		<% else %>
 			<%= menu_item "Login", new_user_session_path %>

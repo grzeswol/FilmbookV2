@@ -23,17 +23,17 @@ class FilmsController < ApplicationController
   def create
     @film = Film.new(film_params)
 		@actors = params[:actors].strip.split(',')
-		p @actors
 		@actors.each{|a| @film.actors << Actor.find_by_name(a.strip)}
     @film.save
     respond_with(@film)
   end
 
   def update
-		@actor = Actor.find_by(id: params[:actors][:id])
-		@film.actors << @actor
-    @film.update(film_params)
-    respond_with(@films)
+		@film.actors.clear
+		@actors = params[:actors].strip.split(',')
+		@actors.each{|a| @film.actors << Actor.find_by_name(a.strip)}
+	  flash[:notice] = "Film was successfully updated." if @film.update(film_params)
+    respond_with(@film, :location => list_films_path)
   end
 
   def destroy
